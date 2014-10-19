@@ -1,0 +1,8 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity" >
+    <item android:id="@+id/home_button"
+        android:icon="@drawable/home_button"
+        android:title="@string/Home"
+        android:showAsAction="ifRoom" />
+</menu>

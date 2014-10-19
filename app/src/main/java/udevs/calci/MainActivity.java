@@ -16,6 +16,7 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
     }
 
+
     public void startBasicCalculator(View view){
         Intent intent= new Intent(this,CalculatorActivity.class);
         startActivity(intent);
@@ -38,10 +39,11 @@ public class MainActivity extends Activity {
         // Handle action bar item clicks here. The action bar will
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        /*int id = item.getItemId();
         if (id == R.id.action_settings) {
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        return super.onOptionsItemSelected(item);*/
+        return true;
     }
 }

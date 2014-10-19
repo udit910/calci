@@ -25,6 +25,11 @@
     <string name="BasicCalculator">Basic Calculator</string>
     <string name="EMICalculator">EMI Calculator</string>
     <string name="UnderDevelopment">\n This feature is under development. Sorry for the inconvenience caused. \n\n Regards, \n Udit</string>
+    <string name="Home">Home</string>
+    <string name="amount_hint">Loan amount</string>
+    <string name="rate">Interest rate</string>
+    <string name="tenure">Tenure</string>
+    <string name="calculate">Calculate</string>
 
 
 </resources>

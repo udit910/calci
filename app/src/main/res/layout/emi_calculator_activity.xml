@@ -1,12 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
-
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/UnderDevelopment"/>
+        android:layout_height="225dp"
+        android:layout_marginTop="30dp"
+        android:background="#DCDCDC"
+        android:orientation="vertical">
+
+              <EditText
+                  android:id="@+id/amount_emi"
+                  android:layout_width="fill_parent"
+                  android:layout_height="50dp"
+                  android:hint="@string/amount_hint"
+                  android:inputType="number"
+               />
+
+              <EditText
+                  android:id="@+id/RateOfInterest"
+                  android:layout_width="fill_parent"
+                  android:layout_height="50dp"
+                  android:hint="@string/rate"
+                  android:inputType="number" />
+              <EditText
+                  android:id="@+id/Tenure"
+                  android:layout_width="fill_parent"
+                  android:layout_height="50dp"
+                  android:hint="@string/tenure"
+                  android:inputType="number" />
+              <Button
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_marginTop="10dp"
+                  android:text="@string/calculate"
+                  android:layout_gravity="center_horizontal"/>
+
+      </LinearLayout>
 
 </LinearLayout>
