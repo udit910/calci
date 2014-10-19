@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -10,196 +10,20 @@
     tools:context=".MainActivity"
     android:weightSum="1"
     >
+    <Button
+        android:layout_marginTop="100dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/BasicCalculator"
+        android:onClick="startBasicCalculator"/>
 
- <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="280dp"
-        android:layout_height="70dp"
-        android:paddingLeft="20dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:orientation="horizontal"
-        android:layout_marginTop="150dp"
-        android:layout_marginLeft="25dp"
-        tools:context=".MainActivity"
-        android:weightSum="1">
-     <Button
-         android:layout_width="60dp"
-         android:layout_height="60dp"
-         android:text="@string/Clear"
-          />
-     <Button
-         android:layout_width="60dp"
-         android:layout_height="60dp"
-         android:text="@string/Devide"
-          />
-     <Button
-         android:layout_width="60dp"
-         android:layout_height="60dp"
-         android:text="@string/Multiply" />
-     <Button
-         android:layout_width="60dp"
-         android:layout_height="60dp"
-         android:layout_marginLeft="5dp"
-         android:text="@string/Delete"
-         />
-
-  </LinearLayout>
-
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="205dp"
-    android:layout_height="300dp"
-    android:paddingLeft="10dp"
-    android:paddingRight="0dp"
-    android:paddingTop="@dimen/activity_horizontal_margin"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:orientation="vertical"
-    android:layout_marginTop="200dp"
-    android:layout_marginLeft="25dp"
-    tools:context=".MainActivity"
-    android:weightSum="1">
+    <Button
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:text="@string/EMICalculator"
+        android:onClick="startEMICalculator"
+        />
 
 
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="-10dp"
-        android:orientation="horizontal"
-        tools:context=".MainActivity">
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Seven" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Eight" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Nine"/>
-    </LinearLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="225dp"
-        android:layout_height="70dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="0dp"
-        android:paddingTop="-10dp"
-        android:paddingBottom="0dp"
-        android:orientation="horizontal"
-        tools:context=".MainActivity">
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Four" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Five" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Six" />
-
-    </LinearLayout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="200dp"
-        android:layout_height="70dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="-10dp"
-        android:orientation="horizontal"
-        tools:context=".MainActivity">
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/One" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Two" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Three" />
-
-    </LinearLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="200dp"
-        android:layout_height="50dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="0dp"
-        android:paddingTop="0dp"
-        android:paddingBottom="-10dp"
-        android:orientation="horizontal"
-        tools:context=".MainActivity"
-        android:weightSum="1"
-        android:layout_weight="0.19"
-        >
-
-        <Button
-            android:layout_width="120dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Zero"
-            android:layout_weight="0.01" />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="wrap_content"
-            android:text="@string/Dot" />
-
-    </LinearLayout>
-
-
-</LinearLayout>
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        android:layout_width="80dp"
-        android:layout_height="300dp"
-        android:paddingLeft="0dp"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingTop="@dimen/activity_horizontal_margin"
-        android:paddingBottom="@dimen/activity_vertical_margin"
-        android:orientation="vertical"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="230dp"
-        tools:context=".MainActivity"
-        android:weightSum="1">
-
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:text="@string/Plus"
-            android:layout_weight="0.01"
-             />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Minus"
-            android:layout_weight="0.01"
-             />
-        <Button
-            android:layout_width="60dp"
-            android:layout_height="120dp"
-            android:layout_marginTop="10dp"
-            android:text="@string/Equals"
-            android:layout_weight="0.01"
-            />
-</LinearLayout>
-
-</RelativeLayout>
+ </LinearLayout>

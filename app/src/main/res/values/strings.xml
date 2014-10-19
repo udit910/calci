@@ -22,5 +22,9 @@
     <string name="Clear">Clr</string>
     <string name="Delete">DEL</string>
     <string name="Equals">=</string>
+    <string name="BasicCalculator">Basic Calculator</string>
+    <string name="EMICalculator">EMI Calculator</string>
+    <string name="UnderDevelopment">\n This feature is under development. Sorry for the inconvenience caused. \n\n Regards, \n Udit</string>
+
 
 </resources>
