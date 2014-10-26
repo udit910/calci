@@ -16,7 +16,8 @@
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:text="@string/BasicCalculator"
-        android:background="#D0E6FF"
+        android:background="@drawable/button_main"
+        android:fontFamily="sans-serif"
         android:onClick="startBasicCalculator"
         />
 
@@ -24,7 +25,8 @@
         android:layout_marginTop="10dp"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="#D0E6FF"
+        android:background="@drawable/button_main"
+        android:fontFamily="sans-serif"
         android:text="@string/EMICalculator"
         android:onClick="startEMICalculator"
         />

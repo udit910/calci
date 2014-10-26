@@ -27,9 +27,16 @@
     <string name="UnderDevelopment">\n This feature is under development. Sorry for the inconvenience caused. \n\n Regards, \n Udit</string>
     <string name="Home">Home</string>
     <string name="amount_hint">Loan amount</string>
-    <string name="rate">Interest rate</string>
+    <string name="rate">Interest rate (per annum)</string>
     <string name="tenure">Tenure</string>
     <string name="calculate">Calculate</string>
+    <string name="resultString">Results</string>
+    <string name="emiAmount">EMI Amount:</string>
+    <string name="totalInterest">Total interest payable :</string>
+    <string name="totalAmount">Total Amount payable :</string>
+    <string name="shareResults">Share Results</string>
+    <string name="loanAmount">Loan Amount</string>
+    <string name="reset">Reset</string>
 
 
 </resources>

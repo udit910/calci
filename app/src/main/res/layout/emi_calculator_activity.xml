@@ -1,42 +1,168 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/emiInputLayout"
         android:layout_width="match_parent"
-        android:layout_height="225dp"
-        android:layout_marginTop="30dp"
+        android:layout_height="@dimen/emiInputLayout_height"
+        android:layout_marginTop="@dimen/emiInputLayout_topMargin"
         android:background="#DCDCDC"
         android:orientation="vertical">
 
-              <EditText
-                  android:id="@+id/amount_emi"
-                  android:layout_width="fill_parent"
-                  android:layout_height="50dp"
-                  android:hint="@string/amount_hint"
-                  android:inputType="number"
-               />
+        <EditText
+            android:id="@+id/amount"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:hint="@string/amount_hint"
+            android:inputType="number" />
 
-              <EditText
-                  android:id="@+id/RateOfInterest"
-                  android:layout_width="fill_parent"
-                  android:layout_height="50dp"
-                  android:hint="@string/rate"
-                  android:inputType="number" />
-              <EditText
-                  android:id="@+id/Tenure"
-                  android:layout_width="fill_parent"
-                  android:layout_height="50dp"
-                  android:hint="@string/tenure"
-                  android:inputType="number" />
-              <Button
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:layout_marginTop="10dp"
-                  android:text="@string/calculate"
-                  android:layout_gravity="center_horizontal"/>
+        <EditText
+            android:id="@+id/rateOfInterest"
+            android:layout_width="fill_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:hint="@string/rate"
+            android:inputType="numberDecimal" />
 
-      </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/tenure"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/TextField_height"
+                android:layout_weight="4"
+                android:hint="@string/tenure"
+                android:inputType="number" />
+
+            <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/radio_group_tenure"
+                android:layout_width="100dp"
+                android:layout_height="@dimen/TextField_height"
+                android:layout_weight="3"
+                android:orientation="horizontal"
+                android:paddingTop="16dp"
+                >
+
+                <RadioButton
+                    android:id="@+id/tenure_months"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onTenureRadioButtonClicked"
+                    android:text="Months"
+                    android:checked="true"/>
+
+                <RadioButton
+                    android:id="@+id/tenure_years"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onTenureRadioButtonClicked"
+                    android:text="Years" />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="65dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="15dp"
+                android:layout_toLeftOf="@+id/centerPoint"
+                android:onClick="calculateEMIAmount"
+                android:text="@string/calculate"
+                android:textSize="@dimen/buttonText_height"
+                android:background="@drawable/calculate"/>
+
+            <TextView
+                android:id="@+id/centerPoint"
+                android:layout_width="4dip"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/button_height"
+                android:layout_marginTop="15dp"
+                android:layout_toRightOf="@+id/centerPoint"
+                android:textSize="@dimen/buttonText_height"
+                android:onClick="resetFields"
+                android:text="@string/reset"
+                android:background="@drawable/calculate"/>
+        </RelativeLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/resultString"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="-5dp"
+        android:background="#ffe8f3ff"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:text="@string/resultString"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:id="@+id/resultLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/emiOutputLayout_height"
+        android:layout_marginTop="-30dp"
+        android:background="#DCDCDC"
+        android:orientation="vertical"
+        android:visibility="invisible">
+
+        <TextView
+            android:id="@+id/emiAmount"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="EMI Amount:" />
+
+        <TextView
+            android:id="@+id/totalInterestPayable"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="Total interest payable :" />
+
+        <TextView
+            android:id="@+id/totalAmountPayable"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/TextField_height"
+            android:layout_gravity="left"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
+            android:hint="Total Amount payable :" />
+
+        <Button
+            android:id="@+id/shareButton"
+            android:layout_width="100dp"
+            android:layout_height="@dimen/button_height"
+            android:layout_gravity="center_horizontal"
+            android:onClick="shareResults"
+            android:text="@string/shareResults"
+            android:textSize="@dimen/buttonText_height"
+            android:background="@drawable/share_button"/>
+
+    </LinearLayout>
+
 
 </LinearLayout>

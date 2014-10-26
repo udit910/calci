@@ -2,10 +2,13 @@
     package udevs.calci;
 
     import android.app.Activity;
-import android.content.Intent;
-import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
+    import android.content.Intent;
+    import android.os.Bundle;
+    import android.view.Menu;
+    import android.view.MenuItem;
+    import android.view.View;
+    import android.widget.Button;
+    import android.widget.TextView;
 
 
     public class CalculatorActivity extends Activity {
@@ -13,6 +16,14 @@ import android.view.MenuItem;
         public void navigateToHomeScreen(){
             Intent intent= new Intent(this,MainActivity.class);
             startActivity(intent);
+        }
+
+        public void numberPressed(View view){
+            TextView screen=(TextView)findViewById(R.id.screen);
+            Button button=(Button) view;
+            screen.setText(button.getText());
+
+
         }
 
         @Override
