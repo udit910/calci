@@ -17,6 +17,9 @@
         android:layout_height="60dp"
         android:layout_marginLeft="49dp"
         android:layout_marginTop="90dp"
+        android:textAlignment="viewEnd"
+        android:layout_gravity="end"
+
 
         />
 
@@ -37,6 +40,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="@string/Clear"
+            android:onClick="clearScreen" />
 
 
             />
@@ -44,13 +48,14 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="@string/Devide"
+            android:onClick="operatorPressed"
 
             />
         <Button
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="@string/Multiply"
-
+            android:onClick="operatorPressed"
             />
 
         <Button
@@ -58,6 +63,7 @@
             android:layout_height="60dp"
             android:layout_marginLeft="5dp"
             android:text="@string/Delete"
+            android:onClick="backspace"
 
             />
 
@@ -93,15 +99,18 @@
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Seven" />
+                android:text="@string/Seven"
+                android:onClick="numberPressed"/>
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Eight" />
+                android:text="@string/Eight"
+                android:onClick="numberPressed"/>
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Nine"/>
+                android:text="@string/Nine"
+                android:onClick="numberPressed"/>
         </LinearLayout>
         <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:tools="http://schemas.android.com/tools"
@@ -117,15 +126,18 @@
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Four" />
+                android:text="@string/Four"
+                android:onClick="numberPressed"/>
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Five" />
+                android:text="@string/Five"
+                android:onClick="numberPressed"/>
             <Button
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:text="@string/Six" />
+                android:text="@string/Six"
+                android:onClick="numberPressed"/>
 
         </LinearLayout>
 
@@ -175,11 +187,13 @@
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
                 android:text="@string/Zero"
-                android:layout_weight="0.01" />
+                android:layout_weight="0.01"
+                android:onClick="numberPressed"/>
             <Button
                 android:layout_width="60dp"
                 android:layout_height="wrap_content"
-                android:text="@string/Dot" />
+                android:text="@string/Dot"
+                android:onClick="decimalPressed"/>
 
         </LinearLayout>
 
@@ -203,6 +217,7 @@
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:text="@string/Plus"
+            android:onClick="operatorPressed"
             android:layout_weight="0.01"
             />
         <Button
@@ -210,6 +225,7 @@
             android:layout_height="60dp"
             android:layout_marginTop="10dp"
             android:text="@string/Minus"
+            android:onClick="operatorPressed"
             android:layout_weight="0.01"
             />
         <Button
@@ -217,8 +233,10 @@
             android:layout_height="120dp"
             android:layout_marginTop="10dp"
             android:text="@string/Equals"
+
             android:background="#00ffff"
             android:layout_weight="0.01"
+            android:onClick="equalsCalculate"
             />
     </LinearLayout>
 

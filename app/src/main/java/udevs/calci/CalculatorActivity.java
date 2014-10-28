@@ -10,26 +10,98 @@
     import android.widget.Button;
     import android.widget.TextView;
 
+    import java.util.Arrays;
+    import java.util.List;
+
+    import bsh.EvalError;
+    import bsh.Interpreter;
+
 
     public class CalculatorActivity extends Activity {
+
+        List<String> operators = Arrays.asList("+", "-", "*","/");
 
         public void navigateToHomeScreen(){
             Intent intent= new Intent(this,MainActivity.class);
             startActivity(intent);
         }
 
+        public void decimalPressed(View view) {
+        }
+
+        public void backspace(View view) {
+            TextView screen=(TextView)findViewById(R.id.screen);
+            String screenText=(String) screen.getText();
+            screen.setText(screenText.substring(0,screenText.length()-1));
+
+        }
+
+        public void clearScreen(View view) {
+            TextView screen=(TextView)findViewById(R.id.screen);
+            String screenText=(String) screen.getText();
+            screen.setText("");
+
+        }
+
+        public void equalsCalculate(View view) {
+            TextView screen=(TextView)findViewById(R.id.screen);
+            String screenText=(String) screen.getText();
+
+            if(screenText.toString().equals("")) {
+                //do nothing
+            }
+            else{
+                Interpreter interpreter = new Interpreter();
+                try {
+
+                    screen.setText( interpreter.eval(screenText).toString());
+                } catch (EvalError evalError) {
+                    evalError.printStackTrace();
+                }
+
+
+            }
+
+        }
         public void numberPressed(View view){
             TextView screen=(TextView)findViewById(R.id.screen);
+            String screenText=(String) screen.getText();
             Button button=(Button) view;
-            screen.setText(button.getText());
+            String text=(String) button.getText();
+
+            if(screenText.toString().equals("")) {
+                screen.setText(text);
+            }else{
+                screen.setText(screenText+text);
+            }
 
 
+        }
+
+        public void operatorPressed(View view) {
+            TextView screen=(TextView)findViewById(R.id.screen);
+            String screenText=(String) screen.getText();
+            Button button=(Button) view;
+            String operator=(String) button.getText();
+
+            if(screenText.toString().equals("")) {
+                //do nothing
+            }
+            else if(screenText.substring(screenText.length() - 1).equals(operator) ){
+                //do nothing
+            }
+            else if(operators.contains(screenText.substring(screen.length() - 1))){
+                    screen.setText(screenText.substring(0,screenText.length()-1)+operator);
+            }
+            else{
+                screen.setText(screenText+operator);
+            }
         }
 
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.calculator_activity);
+            setContentView(R.layout.calculator_new);
         }
 
 
@@ -53,4 +125,7 @@
             }
             return super.onOptionsItemSelected(item);
         }
+
+
+
     }

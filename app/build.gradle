@@ -21,4 +21,7 @@ android {
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile files('libs/jsr-309-driver-3.0.0.final-sources.jar')
+    compile files('libs/script-api-1.0-jdk14.jar')
+    compile files('libs/bsh-2.0b2.jar')
 }

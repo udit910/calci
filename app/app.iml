@@ -80,6 +80,9 @@
     </content>
     <orderEntry type="jdk" jdkName="Android API 20 Platform" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" exported="" name="script-api-1.0-jdk14" level="project" />
+    <orderEntry type="library" exported="" name="bsh-2.0b2" level="project" />
+    <orderEntry type="library" exported="" name="jsr-309-driver-3.0.0.final-sources" level="project" />
   </component>
 </module>
 
