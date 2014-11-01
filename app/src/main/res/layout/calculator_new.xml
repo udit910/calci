@@ -17,14 +17,16 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:layout_gravity="end"
+        android:gravity="right|bottom"
         android:layout_marginLeft="12dp"
         android:layout_marginRight="12dp"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
         android:background="@drawable/back"
-        android:textSize="20dp"
-        android:textAlignment="viewEnd" />
+        android:textSize="25dp"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -55,6 +57,8 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+
+            android:textColor="#ff1af7e2"
             android:layout_weight="1"
             android:background="@drawable/calculator_button_special"
             android:onClick="clearScreen"
@@ -69,7 +73,9 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+
             android:layout_weight="1"
+            android:textColor="#ff1af7e2"
             android:background="@drawable/calculator_button_special"
             android:onClick="operatorPressed"
             android:text="@string/Devide" />
@@ -80,7 +86,9 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+
             android:layout_weight="1"
+            android:textColor="#ff1af7e2"
             android:background="@drawable/calculator_button_special"
             android:onClick="operatorPressed"
             android:text="@string/Multiply" />
@@ -90,8 +98,10 @@
             android:layout_height="match_parent"
             android:layout_marginTop="4dp"
             android:layout_marginRight="0dp"
+
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
+            android:textColor="#ff1af7e2"
             android:background="@drawable/calculator_button_special"
             android:onClick="backspace"
             android:text="@string/Delete" />
@@ -116,6 +126,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
@@ -128,6 +139,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
@@ -140,6 +152,7 @@
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
+            android:textStyle="bold"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
             android:text="@string/Nine" />
@@ -151,6 +164,8 @@
             android:layout_marginRight="0dp"
             android:layout_marginBottom="4dp"
             android:layout_weight="1"
+
+            android:textColor="#ff1af7e2"
             android:background="@drawable/calculator_button_special"
             android:onClick="operatorPressed"
             android:text="@string/Plus" />
@@ -175,6 +190,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
@@ -189,6 +205,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
@@ -200,6 +217,7 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="9dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="1"
             android:background="@drawable/calculator_button"
             android:onClick="numberPressed"
@@ -211,7 +229,9 @@
             android:layout_marginTop="4dp"
             android:layout_marginRight="0dp"
             android:layout_marginBottom="4dp"
+
             android:layout_weight="1"
+            android:textColor="#ff1af7e2"
             android:background="@drawable/calculator_button_special"
             android:onClick="operatorPressed"
             android:text="@string/Minus" />
@@ -265,6 +285,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:background="@drawable/calculator_button"
                     android:onClick="numberPressed"
@@ -277,6 +298,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:background="@drawable/calculator_button"
                     android:onClick="numberPressed"
@@ -288,6 +310,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
                     android:layout_weight="1"
                     android:background="@drawable/calculator_button"
                     android:onClick="numberPressed"
@@ -314,6 +337,7 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="9dp"
                     android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
                     android:layout_weight="19"
                     android:background="@drawable/calculator_button"
                     android:onClick="numberPressed"
@@ -326,9 +350,10 @@
                     android:layout_marginTop="4dp"
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="4dp"
+                    android:textStyle="bold"
                     android:layout_weight="9"
                     android:background="@drawable/calculator_button"
-                    android:onClick="numberPressed"
+                    android:onClick="decimalPressed"
                     android:text="@string/Dot" />
 
 
@@ -347,6 +372,7 @@
             android:layout_marginLeft="9dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="4dp"
+            android:textStyle="bold"
             android:layout_weight="7"
             android:background="@drawable/calculator_button_equal"
             android:onClick="equalsCalculate"

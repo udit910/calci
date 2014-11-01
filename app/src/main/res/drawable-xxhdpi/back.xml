@@ -4,8 +4,8 @@
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
     <corners android:radius="8dip" />
-    <solid android:color="#A4A4A4" />
-    <stroke android:width="1dip" android:color="#858585" />
+    <gradient android:angle="-135" android:startColor="#ff6da4ae" android:endColor="#fffafff8"  />
+    <stroke android:width="1dip" android:color="#ff868686" />
 
 </shape>
 

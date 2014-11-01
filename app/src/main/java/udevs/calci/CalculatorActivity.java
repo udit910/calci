@@ -2,19 +2,18 @@
     package udevs.calci;
 
     import android.app.Activity;
-    import android.content.Intent;
-    import android.os.Bundle;
-    import android.view.Menu;
-    import android.view.MenuItem;
-    import android.view.View;
-    import android.widget.Button;
-    import android.widget.TextView;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
-    import java.util.Arrays;
-    import java.util.List;
+import java.util.Arrays;
+import java.util.List;
 
-    import bsh.EvalError;
-    import bsh.Interpreter;
+import bsh.EvalError;
+import bsh.Interpreter;
 
 
     public class CalculatorActivity extends Activity {
@@ -22,8 +21,7 @@
         List<String> operators = Arrays.asList("+", "-", "*","/");
 
         public void navigateToHomeScreen(){
-            Intent intent= new Intent(this,MainActivity.class);
-            startActivity(intent);
+            finish();
         }
 
         public void decimalPressed(View view) {
@@ -32,7 +30,8 @@
         public void backspace(View view) {
             TextView screen=(TextView)findViewById(R.id.screen);
             String screenText=(String) screen.getText();
-            screen.setText(screenText.substring(0,screenText.length()-1));
+            if(!screenText.equals(""))
+                screen.setText(screenText.substring(0,screenText.length()-1));
 
         }
 
@@ -46,15 +45,20 @@
         public void equalsCalculate(View view) {
             TextView screen=(TextView)findViewById(R.id.screen);
             String screenText=(String) screen.getText();
+            String screenTextModified=screenText;
 
-            if(screenText.toString().equals("")) {
+            if(screenText.equals("")) {
                 //do nothing
+                return;
             }
-            else{
+            if(operators.contains(screenText.substring(screenText.length()-1))){
+                screenTextModified=screenText.substring(0,screenText.length()-1);
+            }
+            if(!screenTextModified.equals("")){
                 Interpreter interpreter = new Interpreter();
                 try {
 
-                    screen.setText( interpreter.eval(screenText).toString());
+                    screen.setText(interpreter.eval(screenTextModified).toString());
                 } catch (EvalError evalError) {
                     evalError.printStackTrace();
                 }

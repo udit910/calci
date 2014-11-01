@@ -20,11 +20,19 @@ public class MainActivity extends Activity {
     public void startBasicCalculator(View view){
         Intent intent= new Intent(this,CalculatorActivity.class);
         startActivity(intent);
+
+    }
+
+    public void startKidsCalculator(View view){
+        Intent intent= new Intent(this,KidsCalculator.class);
+        startActivity(intent);
+
     }
 
     public void startEMICalculator(View view){
         Intent intent= new Intent(this,EMICalculatorActivity.class);
         startActivity(intent);
+
     }
 
     @Override

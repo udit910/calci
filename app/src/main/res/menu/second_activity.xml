@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".MainActivity" >
     <item android:id="@+id/home_button"
-        android:icon="@drawable/home_button"
+        android:icon="@drawable/home_final_re_2"
         android:title="@string/Home"
         android:showAsAction="ifRoom" />
 </menu>

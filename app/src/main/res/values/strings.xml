@@ -30,13 +30,21 @@
     <string name="rate">Interest rate (per annum)</string>
     <string name="tenure">Tenure</string>
     <string name="calculate">Calculate</string>
-    <string name="resultString">Results</string>
+    <string name="resultString">EMI Calculation</string>
     <string name="emiAmount">EMI Amount:</string>
     <string name="totalInterest">Total interest payable :</string>
     <string name="totalAmount">Total Amount payable :</string>
-    <string name="shareResults">Share Results</string>
+    <string name="shareResults">Share</string>
     <string name="loanAmount">Loan Amount</string>
     <string name="reset">Reset</string>
+
+
+    <string-array name="difficulty_level">
+        <item>Easy</item>
+        <item>Medium</item>
+        <item>Difficult</item>
+
+    </string-array>
 
 
 </resources>

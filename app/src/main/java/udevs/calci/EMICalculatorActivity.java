@@ -23,15 +23,15 @@ public class EMICalculatorActivity extends Activity {
     String shareText="";
 
     public void navigateToHomeScreen(){
-        Intent intent= new Intent(this,MainActivity.class);
-        startActivity(intent);
+         finish();
+
     }
 
     public boolean  validateInputs(EditText amountField,EditText rateOfInterestTextField,EditText tenureField){
 
         boolean valid =true;
 
-        String alertMessage="Please enter the following fields: ";
+        String alertMessage="";
 
         if(amountField.getText().toString().equals("")){
             valid=false;
@@ -57,6 +57,7 @@ public class EMICalculatorActivity extends Activity {
             AlertDialog.Builder builder = new AlertDialog.Builder(this);
             builder.setMessage(alertMessage);
             AlertDialog dialog = builder.create();
+            dialog.setTitle("Invalid Input");
             dialog.show();
         }
         return valid;
@@ -67,9 +68,10 @@ public class EMICalculatorActivity extends Activity {
         EditText editText1 = (EditText) findViewById(R.id.amount);
         EditText editText2 = (EditText) findViewById(R.id.rateOfInterest);
         EditText editText3 = (EditText) findViewById(R.id.tenure);
+
         LinearLayout resultLayout=(LinearLayout)findViewById(R.id.resultLayout);
-        resultLayout.setVisibility(View.VISIBLE);
         TextView textView=(TextView) findViewById(R.id.resultString);
+
         textView.setVisibility(View.INVISIBLE);
         editText1.setText(null);
         editText2.setText(null);
@@ -107,35 +109,41 @@ public class EMICalculatorActivity extends Activity {
         Double emi=(amount*(rate/(12*100)))*((Math.pow((1+(rate/(12*100))),tenure)))/((Math.pow((1+(rate/(12*100))),tenure)-1));
 
         //output fields
-        TextView emiAmountField = (TextView) findViewById(R.id.emiAmount);
-        TextView totalInterestField = (TextView) findViewById(R.id.totalInterestPayable);
-        TextView totalAmountField = (TextView) findViewById(R.id.totalAmountPayable);
+        TextView emiAmountFieldValue = (TextView) findViewById(R.id.emiAmountValue);
+        TextView totalInterestValue = (TextView) findViewById(R.id.totalInterestPayableValue);
+        TextView totalAmountFieldValue = (TextView) findViewById(R.id.totalAmountPayableValue);
 
         //setting results layout as visible
         TextView resultStringField = (TextView) findViewById(R.id.resultString);
         resultStringField.setVisibility(View.VISIBLE);
 
-        emiAmountField.setText(getResources().getString(R.string.emiAmount) + " " + (Math.round(emi)));
-        Double totalAmountPayable=emi*tenure;
-        totalAmountField.setText(getResources().getString(R.string.totalAmount) + " " + Math.round(totalAmountPayable));
+        emiAmountFieldValue.setText(Long.toString(Math.round(emi)));
+        Long totalAmountPayable=Math.round(emi)*tenure;
+        totalAmountFieldValue.setText(Long.toString( Math.round(totalAmountPayable)));
         Double totalInterestPayable=totalAmountPayable-amount;
-        totalInterestField.setText(getResources().getString(R.string.totalInterest) + " " + Math.round(totalInterestPayable));
+        totalInterestValue.setText(Long.toString(Math.round(totalInterestPayable)));
 
         //output the result
         LinearLayout resultLayout=(LinearLayout)findViewById(R.id.resultLayout);
         resultLayout.setVisibility(View.VISIBLE);
+        String tenureType;
+        if(tenureMonths){
+            tenureType="months";
+        }else{
+            tenureType="years";
+        }
 
-        shareText=constructShareTextString(amount,rate,tenure,emiAmountField.getText().toString(),
-                totalInterestField.getText().toString(),totalAmountField.getText().toString());
+        shareText=constructShareTextString(amount.longValue(),rate.longValue(),tenureType,Integer.parseInt(tenureField.getText().toString()),Math.round(emi),
+                totalInterestPayable.longValue(),totalAmountPayable.longValue());
 
     }
 
-    private String constructShareTextString(Double amount, Double rate, Integer tenure, String s, String totalInterestPayable, String s1) {
-        shareText="===============Inputs==============\n\n";
-        shareText+="Loan Amount :" + amount + "\n" +"Rate of Interest(per annum) : " +rate + "\n" + "Tenure : " + tenure +"\n\n";
-        shareText+="===========EMI Calculation========\n\n";
-        shareText+=s+ "\n" + totalInterestPayable  +"\n"+  s1 +"\n\n" ;
-        shareText+="==================================\n";
+    private String constructShareTextString(Long amount, Long rate,String tenureType, Integer tenure, Long emi, Long totalInterestPayable, Long totalAmount) {
+        shareText="-------------------Inputs----------------\n\n";
+        shareText+="Loan Amount :" + amount + "\n" +"Rate of Interest(per annum) : " +rate + "\n" + "Tenure : " + tenure +" "+tenureType+"\n\n";
+        shareText+="-------------EMI Calculation---------\n\n";
+        shareText+="EMI Amount: "+emi +"\n" +"Total Interest Payable: " +totalInterestPayable  +"\n"+  "Total Amount Payable: "+totalAmount +"\n\n" ;
+        shareText+="-----------------------------------------------\n";
         return shareText;
     }
 
@@ -202,5 +210,9 @@ public class EMICalculatorActivity extends Activity {
         }
         return super.onOptionsItemSelected(item);
 
+    }
+    @Override
+    public void onDestroy(){
+        super.onDestroy();
     }
 }
